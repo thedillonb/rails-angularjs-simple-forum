@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
   <title>SimpleForum</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
+<body ng-view>
 </body>
 </html>
