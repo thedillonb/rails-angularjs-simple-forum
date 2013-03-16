@@ -6,7 +6,7 @@ app.controller('ForumIndexController', function($scope, Forum) {
     $scope.items = Forum.query();
 
     $scope.destroy = function(index) {
-        Forum.destroy({id: $scope.items[index].id}, function() {
+        Forum.remove({id: $scope.items[index].id}, function() {
             $scope.items.splice(index, 1);
         });
     }
