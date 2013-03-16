@@ -2,6 +2,14 @@
 <hr/>
 
 <div ng-controller="CommentsController">
+
+    <!-- This will only show when there's no items to let the user know there's purposefully nothing there.. -->
+    <div ng-show="comments.length == 0">
+        <h4>There's nothing here...</h4>
+        <p>Be the first to comment on this Forum below!</p>
+    </div>
+
+    <!-- Iterate over the comments -->
     <div class="media" ng-repeat="comment in comments">
         <div class="media">
             <div class="media-body">

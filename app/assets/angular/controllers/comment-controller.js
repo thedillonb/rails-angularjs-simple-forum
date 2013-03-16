@@ -1,7 +1,7 @@
 'use strict';
 
 var app = angular.module('app');
-app.controller('CommentsController', function($scope, Comment, $routeParams) {
+app.controller('CommentsController', ['$scope', 'Comment', '$routeParams', function($scope, Comment, $routeParams) {
     //Grab all the comments from the server
     $scope.comments = Comment.query({forumId: $routeParams.id});
 
@@ -26,4 +26,4 @@ app.controller('CommentsController', function($scope, Comment, $routeParams) {
             $scope.errors = response.data.errors;
         });
     }
-});
+}]);

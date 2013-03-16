@@ -2,7 +2,7 @@
 
 var app = angular.module('app');
 
-app.controller('ForumIndexController', function($scope, Forum) {
+app.controller('ForumIndexController', ['$scope', 'Forum', function($scope, Forum) {
     //Grab all forums from the server
     $scope.items = Forum.query();
 
@@ -15,9 +15,9 @@ app.controller('ForumIndexController', function($scope, Forum) {
             $scope.items.splice(index, 1);
         });
     }
-});
+}]);
 
-app.controller('ForumCreateController', function($scope, $location, Forum) {
+app.controller('ForumCreateController', ['$scope', '$location', 'Forum', function($scope, $location, Forum) {
     //The save method which is called when the user wants to submit their data
     $scope.save = function() {
 
@@ -36,10 +36,10 @@ app.controller('ForumCreateController', function($scope, $location, Forum) {
             $scope.errors = response.data.errors;
         });
     }
-});
+}]);
 
 //A controller to show the forum and all it's glory
-app.controller('ForumShowController', function($scope, Forum, Comment, $routeParams) {
+app.controller('ForumShowController', ['$scope', 'Forum', 'Comment', '$routeParams', function($scope, Forum, Comment, $routeParams) {
     //Grab the forum from the server
     $scope.forum = Forum.get({id: $routeParams.id})
-});
+}]);

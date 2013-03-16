@@ -10,7 +10,7 @@
     get an error complaining about 'No module <MODULE>'.
  */
 angular.module('app', ['ngResource'])
-    .config(['$routeProvider', function($routeProvider, $locationProvider) {
+    .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
         $routeProvider
             .when('/',          {controller: 'ForumIndexController',    templateUrl: '<%= asset_path('templates/index.html') %>'})
             .when('/forum/new', {controller: 'ForumCreateController',   templateUrl: '<%= asset_path('templates/new.html') %>'})
