@@ -9,7 +9,7 @@
     Note: We need the empty array after the 'app' declaration, without it, you
     get an error complaining about 'No module <MODULE>'.
  */
-angular.module('app', ['ngResource'])
+angular.module('app', ['ngResource', 'app.loading'])
     .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
         $routeProvider
             .when('/',          {controller: 'ForumIndexController',    templateUrl: '<%= asset_path('templates/index.html') %>'})
@@ -17,3 +17,5 @@ angular.module('app', ['ngResource'])
             .when('/forum/:id', {controller: 'ForumShowController',     templateUrl: '<%= asset_path('templates/show.html') %>'})
             .otherwise({redirectTo: '/'});
 }]);
+
+

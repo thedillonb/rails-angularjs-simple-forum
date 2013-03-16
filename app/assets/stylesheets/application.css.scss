@@ -1,1 +1,17 @@
 @import 'bootstrap';
+@import 'bootstrap-responsive';
+
+#loading {
+  @extend .alert;
+  @extend .alert-info;
+  position: absolute;
+  width: 100px;
+  left: 50%;
+  right: 50%;
+  margin-left: -50px;
+  text-align: center;
+  top: 20px;
+  padding: 10px;
+  box-shadow: 0 0 2px 1px #ddd;
+  font-weight: bold;
+}
