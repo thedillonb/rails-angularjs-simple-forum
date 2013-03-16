@@ -1,11 +1,17 @@
 <h2>New Forum</h2>
 
+<!-- When the form is submitted call the save() function within the controller -->
 <form ng-submit="save()" class="form-vertical">
+
+    <!-- The control-group, control-label, and controls classes are Bootstrap specific -->
     <div class="control-group">
         <label class="control-label">Forum Name:</label>
 
         <div class="controls">
+            <!-- This input is tied to the forum.name object. -->
             <input type="text" ng-model="forum.name"/>
+
+            <!-- If there's any errors that pertain to name display them here! -->
             <div ng-repeat="error in errors.name">{{error}}</div>
         </div>
     </div>

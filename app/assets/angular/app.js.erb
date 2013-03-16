@@ -12,8 +12,8 @@
 angular.module('app', ['ngResource'])
     .config(['$routeProvider', function($routeProvider, $locationProvider) {
         $routeProvider
-            .when('/',          {controller: 'ForumIndexController',    templateUrl: '<%= asset_path('templates/forum/index.html') %>'})
-            .when('/forum/new', {controller: 'ForumCreateController',   templateUrl: '<%= asset_path('templates/forum/new.html') %>'})
-            .when('/forum/:id', {controller: 'ForumShowController',     templateUrl: '<%= asset_path('templates/forum/show.html') %>'})
+            .when('/',          {controller: 'ForumIndexController',    templateUrl: '<%= asset_path('templates/index.html') %>'})
+            .when('/forum/new', {controller: 'ForumCreateController',   templateUrl: '<%= asset_path('templates/new.html') %>'})
+            .when('/forum/:id', {controller: 'ForumShowController',     templateUrl: '<%= asset_path('templates/show.html') %>'})
             .otherwise({redirectTo: '/'});
 }]);
