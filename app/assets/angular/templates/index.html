@@ -1,19 +1,46 @@
-<h2>Forums <a href="#/forum/new" class="btn btn-primary pull-right">New</a></h2>
+<h2>Forums</h2>
 
-<!-- This will only show when there's no items to let the user know there's purposefully nothing there.. -->
-<div ng-show="items.$resolved && items.length == 0">
-    <hr />
-    <h4>There's nothing here...</h4>
-    <p>Use the 'New' button to create a new forum!</p>
+<div class="row">
+
+    <div class="span9">
+
+        <!-- This will only show when there's no items to let the user know there's purposefully nothing there.. -->
+        <div ng-show="items.$resolved && items.length == 0">
+            <hr/>
+            <h4>There's nothing here...</h4>
+
+            <p>Use the 'New' button to create a new forum!</p>
+        </div>
+
+        <!-- A nice table that will contain a list of Forums -->
+        <table class="table table-hover">
+            <!-- This will create a row for every item within our items object (both of these refer to the forums -->
+            <tr ng-repeat="item in items">
+                <td width="100%"><a href="#/forum/{{item.id}}">{{item.name}}</a></td>
+
+                <!-- When the user clicks this button it will call the 'destory()' method within the controller -->
+                <td><a ng-click="destroy($index)" href=""><i class="icon-trash"></i></a></td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div class="span3">
+
+        <a href="#/forum/new" class="btn btn-primary btn-block btn-large">New</a>
+        
+        <br />
+
+        <div class="well">
+            <p>
+                Welcome to the simple-forum project. This an application designed primarily in AngularJS for a front-end
+                and
+                Ruby on Rails as a back-end.
+            </p>
+            <p>
+                Please feel free to leave a comment. Try to keep it civil and clean. Thanks!
+            </p>
+        </div>
+
+    </div>
 </div>
-
-<!-- A nice table that will contain a list of Forums -->
-<table class="table table-hover">
-    <!-- This will create a row for every item within our items object (both of these refer to the forums -->
-    <tr ng-repeat="item in items">
-        <td width="100%"><a href="#/forum/{{item.id}}">{{item.name}}</a></td>
-
-        <!-- When the user clicks this button it will call the 'destory()' method within the controller -->
-        <td><a ng-click="destroy($index)" href=""><i class="icon-trash"></i></a></td>
-    </tr>
-</table>
