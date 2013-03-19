@@ -1,0 +1,17 @@
+<h2>New Forum</h2>
+
+<form ng-submit="save()" class="form-vertical">
+    <div class="control-group">
+        <label class="control-label">Forum Name:</label>
+
+        <div class="controls">
+            <input type="text" ng-model="forum.name"/>
+            <div ng-repeat="error in errors.name">{{error}}</div>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <input class="btn btn-primary" type="submit" value="Create!"/>
+        </div>
+    </div>
+</form>

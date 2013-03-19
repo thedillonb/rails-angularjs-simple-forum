@@ -1,0 +1,19 @@
+'use strict';
+/*
+    This is our main launch point from Angular. We'll put anything to do with the
+    general well being of our app in this file. For now it'll basically just contain
+    the routing information.
+
+    Our module will be called 'app'.
+
+    Note: We need the empty array after the 'app' declaration, without it, you
+    get an error complaining about 'No module <MODULE>'.
+ */
+angular.module('app', ['ngResource'])
+    .config(['$routeProvider', function($routeProvider, $locationProvider) {
+        $routeProvider
+            .when('/',          {controller: 'ForumIndexController',    templateUrl: '<%= asset_path('templates/forum/index.html') %>'})
+            .when('/forum/new', {controller: 'ForumCreateController',   templateUrl: '<%= asset_path('templates/forum/new.html') %>'})
+            .when('/forum/:id', {controller: 'ForumShowController',     templateUrl: '<%= asset_path('templates/forum/show.html') %>'})
+            .otherwise({redirectTo: '/'});
+}]);

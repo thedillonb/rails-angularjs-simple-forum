@@ -1,0 +1,31 @@
+<h2>Forum: {{forum.name}}</h2>
+<hr/>
+
+<div ng-controller="CommentsController">
+    <div class="media" ng-repeat="comment in comments">
+        <div class="media">
+            <div class="media-body">
+                <h4 class="media-heading">
+                    {{comment.name}}
+                    <div class="pull-right" style="font-size: 12px;">
+                        {{comment.created_at}}
+                    </div>
+                </h4>
+                {{comment.body}}
+            </div>
+        </div>
+    </div>
+
+    <hr/>
+    <form ng-submit="save()">
+        <input type="text" ng-model="name" style="width: 100%;" placeholder="Name"/>
+
+        <div ng-repeat="error in errors.name" class="alert alert-error"><strong>Name</strong> {{error}}</div>
+
+        <textarea ng-model="body" rows="4" style="width: 100%;" placeholder="Comment"></textarea>
+
+        <div ng-repeat="error in errors.body" class="alert alert-error"><strong>Body</strong> {{error}}</div>
+
+        <button type="submit" class="btn btn-primary btn-large">Post!</button>
+    </form>
+</div>
